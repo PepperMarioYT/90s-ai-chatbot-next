@@ -1,6 +1,5 @@
 import { UseChatHelpers } from 'ai/react'
 
-import { Button } from '@/components/ui/button'
 import { ExternalLink } from '@/components/external-link'
 import { IconArrowRight } from '@/components/ui/icons'
 
@@ -32,9 +31,6 @@ export function EmptyScreen() {
           is synced through the SDK so the model is aware of your interactions
           as they happen.
         </p>
-        <Button className="mt-4 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition duration-300 flex items-center">
-          Get Started <IconArrowRight className="ml-2" />
-        </Button>
       </div>
     </div>
   )
