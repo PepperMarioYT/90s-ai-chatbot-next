@@ -1,6 +1,5 @@
 import * as React from 'react'
 import Link from 'next/link'
-
 import { cn } from '@/lib/utils'
 import { auth } from '@/auth'
 import { Button, buttonVariants } from '@/components/ui/button'
@@ -39,7 +38,9 @@ async function UserOrLogin() {
           <UserMenu user={session.user} />
         ) : (
           <Button variant="link" asChild className="-ml-2">
-            <Link href="/login">Login</Link>
+            <Link href="/login" className="text-blue-600 font-bold">
+              Login
+            </Link>
           </Button>
         )}
       </div>
@@ -49,7 +50,7 @@ async function UserOrLogin() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 border-b shrink-0 bg-gradient-to-b from-background/10 via-background/50 to-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 border-b shrink-0 bg-gradient-to-b from-[#ffcc00] via-[#ff6699] to-[#66ccff] backdrop-blur-xl" style={{ fontFamily: 'Comic Sans MS, cursive, sans-serif' }}>
       <div className="flex items-center">
         <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
           <UserOrLogin />
@@ -61,6 +62,7 @@ export function Header() {
           href="https://github.com/vercel/nextjs-ai-chatbot/"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: 'outline' }))}
+          style={{ backgroundColor: '#fff', color: '#000', fontWeight: 'bold' }} // Retro button styles
         >
           <IconGitHub />
           <span className="hidden ml-2 md:flex">GitHub</span>
@@ -69,6 +71,7 @@ export function Header() {
           href="https://vercel.com/templates/Next.js/nextjs-ai-chatbot"
           target="_blank"
           className={cn(buttonVariants())}
+          style={{ backgroundColor: '#00ccff', color: '#fff', fontWeight: 'bold' }} // Retro button styles
         >
           <IconVercel className="mr-2" />
           <span className="hidden sm:block">Deploy to Vercel</span>
